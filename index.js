@@ -18,9 +18,11 @@ document.getElementById("clear-history").addEventListener("click", function () {
 document.getElementById("date").innerText = new Date().toLocaleDateString(
   "en-GB",
   {
+    weekday: "long",
     day: "numeric",
     month: "long",
     year: "numeric",
+    timeZone: "Asia/Dhaka", 
   }
 );
 
@@ -44,10 +46,14 @@ cardContainer.addEventListener("click", function (e) {
         "text-start",
         "mb-2"
       );
-      p.innerText = `You have Completed the task ${title} at ${new Date().toLocaleDateString(
+      p.innerText = `You have Completed the task ${title} at ${new Date().toLocaleTimeString(
         [],
-        { hour: "2-digit", minute: "2-digit" }
+        {
+          hour: "2-digit",
+          minute: "2-digit",
+        }
       )}`;
+
       const historyTagParent = document.getElementById("history");
       historyTagParent.appendChild(p);
 
