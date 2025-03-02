@@ -1,0 +1,103 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  </head>
+
+  <body class="bg-[#f4f7ff]">
+    <header
+      class="flex bg-white shadow-md justify-between rounded-lg items-center p-[20px] lg:mx-[140px]">
+      <div class="flex items-center gap-3">
+        <img src="./assets/logo.png" alt="" />
+        <p class="text-[35px] font-[300]">
+          Dev <span class="font-[700]">Board</span>
+        </p>
+      </div>
+      <div>
+        <button
+          id="GoBack"
+          class="bg-[#3752fd] px-5 py-3 rounded-[8px] cursor-pointer text-white">
+          Back to Desk
+        </button>
+      </div>
+    </header>
+
+    <main class="flex flex-col mt-5 lg:mx-[140px]">
+      <h1 class="text-[32px] font-bold text-center mb-10">Blogs</h1>
+      <section class="bg-white p-5 shadow-sm rounded-[8px] mt-5">
+        <p
+          class="text-[24px] font-[500] border-b-[1px] border-dashed border-gray-500 p-2 rounded-[8px]">
+          Question-1: What are the different ways to select an element in the
+          DOM?
+        </p>
+        <p class="mt-4 text-[24px] text-gray-500">
+          You can select an element in the DOM using getElementById(),
+          getElementsByClassName(), getElementsByTagName(), querySelector(),
+          querySelectorAll(), getAttribute(), and childNodes().
+        </p>
+      </section>
+      <section class="bg-white p-5 shadow-sm rounded-[8px] mt-5">
+        <p
+          class="text-[24px] font-[500] border-b-[1px] border-dashed border-gray-500 p-2 rounded-[8px]">
+          Question-2: What is the difference between innerHTML, innerText, and
+          textContent ?
+        </p>
+        <p class="mt-4 text-[24px] text-gray-500">
+          innerHTML: Returns or sets the HTML content, including tags, inside an
+          element. innerText: Returns or sets the visible text content of an
+          element, excluding hidden text and HTML tags. textContent: Returns or
+          sets the text content of an element, including hidden text, but
+          without HTML tags.
+        </p>
+      </section>
+      <section class="bg-white p-5 shadow-sm rounded-[8px] mt-5">
+        <p
+          class="text-[24px] font-[500] border-b-[1px] border-dashed border-gray-500 p-2 rounded-[8px]">
+          Question-3: What is event delegation in the DOM?
+        </p>
+        <p class="mt-4 text-[24px] text-gray-500">
+          Event delegation is a technique in the DOM where instead of attaching
+          event listeners to individual elements, you attach a single event
+          listener to a parent element and use event propagation (bubbling) to
+          handle events for its child elements. This improves performance and
+          simplifies code, especially when dealing with dynamic elements.
+        </p>
+      </section>
+      <section class="bg-white p-5 shadow-sm rounded-[8px] mt-5">
+        <p
+          class="text-[24px] font-[500] border-b-[1px] border-dashed border-gray-500 p-2 rounded-[8px]">
+          Question-4: What is event bubbling in the DOM?
+        </p>
+        <p class="mt-4 text-[24px] text-gray-500">
+          Event bubbling is a process in the DOM where an event triggered on an
+          element first runs its handler on that element, then propagates upward
+          through its ancestors (parent, grandparent, etc.) in the DOM
+          hierarchy, triggering event handlers on each of them, unless stopped.
+        </p>
+      </section>
+      <section class="bg-white p-5 shadow-sm rounded-[8px] mt-5">
+        <p
+          class="text-[24px] font-[500] border-b-[1px] border-dashed border-gray-500 p-2 rounded-[8px]">
+          Question-5: How do you create, add, and remove elements using
+          JavaScript?
+        </p>
+        <p class="mt-4 text-[24px] text-gray-500">
+          You can create an element with document.createElement(), add it with
+          appendChild() or insertBefore(), and remove it with remove(). or
+          createElement().
+        </p>
+      </section>
+    </main>
+    <script>
+      const GoBack = document.getElementById("GoBack");
+      GoBack.addEventListener("click", function () {
+        window.location.href = "index.html";
+      });
+    </script>
+  </body>
+</html>

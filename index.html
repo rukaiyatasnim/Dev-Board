@@ -5,7 +5,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DevBoard</title>
+    <title>Dev Board</title>
     <script
       src="https://kit.fontawesome.com/b7903cb9e0.js"
       crossorigin="anonymous"></script>
@@ -27,7 +27,7 @@
       <div class="flex items-center gap-5">
         <div class="bg-[#f4f7ff] p-2 flex gap-3 items-center rounded-3xl">
           <img src="assets/checkbox.png" class="text-3xl" alt="" />
-          <span class="font-bold text-3xl">23</span>
+          <span class="font-bold text-3xl" id="completedTask">23</span>
         </div>
         <div>
           <img id="theme-icon" src="assets/theme-btn.png" alt="" />
@@ -49,16 +49,19 @@
                 <span class="font-semibold text-xs text-gray-600"
                   >Task Assigned</span
                 >
-                <h1 class="font-bold text-2xl">05</h1>
+                <h1 class="font-bold text-2xl">
+                  0<span id="task-assigned">6</span>
+                </h1>
               </div>
             </div>
             <div
-              class="py-3 px-10 rounded-lg flex items-center gap-3 bg-linear-to-r from-[#3752FD] to-[#9BA8F8]">
+              id="discover"
+              class="cursor-pointer py-3 px-10 rounded-lg flex items-center gap-3 bg-linear-to-r from-[#3752FD] to-[#9BA8F8]">
               <img src="assets/board.png" alt="" />
-              <h2 class="text-2xl font-semibold text-white">
+              <h1 class="text-2xl font-semibold text-white">
                 Discover Something <br />
                 New Today!
-              </h2>
+              </h1>
             </div>
             <div
               class="flex items-center bg-[#f4f7ff] py-3 px-10 gap-4 rounded-lg">
@@ -75,13 +78,13 @@
             </div>
           </div>
 
-          <div class="grid grid-cols-3 gap-5 py-5 px-4">
-            <div class="bg-[#f4f7ff] rounded-lg p-4">
-              <span
-                class="bg-white p-2 rounded-lg text-[#00303C] font-normal text-xs"
-                >ShopEase</span
-              >
-              <h2 class="text-lg font-medium py-2">Fix Mobile Button Issue</h2>
+          <!-- Card Section -->
+          <div class="grid grid-cols-3 gap-5 py-5 px-4" id="card-container">
+            <div class="bg-[#f4f7ff] rounded-lg p-4 task-box">
+              <span class="bg-white p-2 rounded-lg text-xs">ShopEase</span>
+              <h2 class="text-lg font-medium py-2 title">
+                Fix Mobile Button Issue
+              </h2>
               <p
                 class="bg-white rounded-lg p-2 mb-4 truncate text-gray-500"
                 title="Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
@@ -89,44 +92,42 @@
                 Debug using Chrome DevTools, check for overlapping elements, and
                 ensure onClick works properly and ensure onClick works properly
               </p>
-              <div
-                class="pt-2 flex items-center justify-between gap-4 border-t-2 border-gray-200 border-dashed">
+              <div class="pt-2 flex items-center justify-between gap-4">
                 <div>
-                  <span class="text-xs text-[#00303C] font-normal"
-                    >Deadline</span
-                  >
-                  <p class="font-semibold text-sm">21 March 2025</p>
+                  <span class="text-xs">Deadline</span>
+                  <p class="date font-semibold text-sm">21 March 2025</p>
                 </div>
                 <button
-                  class="btn btn-primary bg-[#3752FD] border-none p-4 text-white">
+                  class="btn btn-primary bg-[#3752FD] border-none task"
+                  task>
                   Completed
                 </button>
               </div>
             </div>
-            <div class="bg-[#f4f7ff] rounded-lg p-4">
+            <div class="bg-[#f4f7ff] rounded-lg p-4 task-box">
               <span class="bg-white p-2 rounded-lg text-xs">CloudSync</span>
-              <h2 class="text-lg font-medium py-2">Add Dark Mode</h2>
+              <h2 class="text-lg font-medium py-2 title">Add Dark Mode</h2>
               <p
                 class="bg-white rounded-lg p-2 mb-4 truncate text-gray-500"
                 title="Store the user's preference in localStorage, update CSS variables dynamically, and apply a smooth transition effect.">
                 Store the user's preference in localStorage, update CSS
                 variables dynamically, and apply a smooth transition effect.
               </p>
-              <div
-                class="pt-2 flex items-center justify-between gap-4 border-t-2 border-gray-200 border-dashed">
+              <div class="pt-2 flex items-center justify-between">
                 <div>
                   <span class="text-xs">Deadline</span>
-                  <p class="font-semibold text-sm">21 March 2025</p>
+                  <p class="date font-semibold text-sm">21 March 2025</p>
                 </div>
-                <button
-                  class="btn btn-primary bg-[#3752FD] border-none p-4 text-white">
+                <button class="btn btn-primary bg-[#3752FD] border-none task">
                   Completed
                 </button>
               </div>
             </div>
-            <div class="bg-[#f4f7ff] rounded-lg p-4">
+            <div class="bg-[#f4f7ff] rounded-lg p-4 task-box">
               <span class="bg-white p-2 rounded-lg text-xs">SwiftPay</span>
-              <h2 class="text-lg font-medium py-2">Optimize Home page</h2>
+              <h2 class="text-lg font-medium py-2 title">
+                Optimize Home page 
+              </h2>
               <p
                 class="bg-white rounded-lg p-2 mb-4 truncate text-gray-500"
                 title="DDebug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
@@ -134,21 +135,21 @@
                 Debug using Chrome DevTools, check for overlapping elements, and
                 ensure onClick works properly and ensure onClick works properly
               </p>
-              <div
-                class="pt-2 flex items-center justify-between gap-4 border-t-2 border-gray-200 border-dashed">
+              <div class="pt-2 flex items-center justify-between">
                 <div>
                   <span class="text-xs">Deadline</span>
-                  <p class="font-semibold text-sm">21 March 2025</p>
+                  <p class="date font-semibold text-sm">21 March 2025</p>
                 </div>
                 <button
-                  class="btn btn-primary bg-[#3752FD] border-none p-4 text-white">
+                  class="btn btn-primary bg-[#3752FD] border-none task"
+                  task>
                   Completed
                 </button>
               </div>
             </div>
-            <div class="bg-[#f4f7ff] rounded-lg p-4">
+            <div class="bg-[#f4f7ff] rounded-lg p-4 task-box">
               <span class="bg-white p-2 rounded-lg text-xs">Meta</span>
-              <h2 class="text-lg font-medium py-2">Add new emoji 🤲</h2>
+              <h2 class="text-lg font-medium py-2 title">Add new emoji 🤲</h2>
               <p
                 class="bg-white rounded-lg p-2 mb-4 truncate text-gray-500"
                 title="Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
@@ -156,21 +157,21 @@
                 Debug using Chrome DevTools, check for overlapping elements, and
                 ensure onClick works properly and ensure onClick works properly
               </p>
-              <div
-                class="pt-2 flex items-center justify-between gap-4 border-t-2 border-gray-200 border-dashed">
+              <div class="pt-2 flex items-center justify-between">
                 <div>
                   <span class="text-xs">Deadline</span>
-                  <p class="font-semibold text-sm">21 March 2025</p>
+                  <p class="date font-semibold text-sm">21 March 2025</p>
                 </div>
-                <button
-                  class="btn btn-primary bg-[#3752FD] border-none p-4 text-white">
+                <button class="btn btn-primary bg-[#3752FD] border-none task">
                   Completed
                 </button>
               </div>
             </div>
-            <div class="bg-[#f4f7ff] rounded-lg p-4">
+            <div class="bg-[#f4f7ff] rounded-lg p-4 task-box">
               <span class="bg-white p-2 rounded-lg text-xs">Google LLC</span>
-              <h2 class="text-lg font-medium py-2">Integrate OpenAI API</h2>
+              <h2 class="text-lg font-medium py-2 title">
+                Integrate OpenAI API
+              </h2>
               <p
                 class="bg-white rounded-lg p-2 mb-4 truncate text-gray-500"
                 title="Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
@@ -178,21 +179,21 @@
                 Debug using Chrome DevTools, check for overlapping elements, and
                 ensure onClick works properly and ensure onClick works properly
               </p>
-              <div
-                class="pt-2 flex items-center justify-between gap-4 border-t-2 border-gray-200 border-dashed">
+              <div class="pt-2 flex items-center justify-between gap-4">
                 <div>
                   <span class="text-xs">Deadline</span>
-                  <p class="font-semibold text-sm">21 March 2025</p>
+                  <p class="date font-semibold text-sm">21 March 2025</p>
                 </div>
-                <button
-                  class="btn btn-primary bg-[#3752FD] border-none p-4 text-white">
+                <button class="btn btn-primary bg-[#3752FD] border-none task">
                   Completed
                 </button>
               </div>
             </div>
-            <div class="bg-[#f4f7ff] rounded-lg p-4">
-              <span class="bg-white p-2 rounded-lg text-xs">Glassdoor</span>
-              <h2 class="text-lg font-medium py-2">Improve Job searching</h2>
+            <div class="bg-[#f4f7ff] rounded-lg p-4 task-box">
+              <span class="bg-white p-2 rounded-lg text-xs">Glassdoar</span>
+              <h2 class="text-lg font-medium py-2 title">
+                Improve Job searching
+              </h2>
               <p
                 class="bg-white rounded-lg p-2 mb-4 truncate text-gray-500"
                 title="Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
@@ -200,14 +201,12 @@
                 Debug using Chrome DevTools, check for overlapping elements, and
                 ensure onClick works properly and ensure onClick works properly
               </p>
-              <div
-                class="pt-2 flex items-center justify-between gap-4 border-t-2 border-gray-200 border-dashed">
+              <div class="pt-2 flex items-center justify-between">
                 <div>
                   <span class="text-xs">Deadline</span>
-                  <p class="font-semibold text-sm">21 March 2025</p>
+                  <p class="date font-semibold text-sm">21 March 2025</p>
                 </div>
-                <button
-                  class="btn btn-primary bg-[#3752FD] border-none p-4 text-white outline-none">
+                <button class="btn btn-primary bg-[#3752FD] border-none task">
                   Completed
                 </button>
               </div>
@@ -222,13 +221,25 @@
             </div>
             <button
               id="clear-history"
-              class="btn btn-primary bg-[#3752FD] border-none">
+              class="btn btn-primary bg-[#3752FD] border-none task"
+              task>
               Clear History
             </button>
+          </div>
+          <div id="activity-history">
+            <div id="history" class="pt-5"></div>
           </div>
         </aside>
       </div>
     </main>
-    <script src="script/index.js"></script>
+
+    <script>
+      const Discover = document.getElementById("discover");
+      Discover.addEventListener("click", function () {
+        window.location.href = "question.html";
+      });
+    </script>
+
+    <script src="index.js"></script>
   </body>
 </html>
